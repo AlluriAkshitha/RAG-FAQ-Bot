@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <body>
+    <button onclick="ask()">Test /chat</button>
+    <pre id="out"></pre>
+    <script>
+      async function ask() {
+        try {
+          const res = await fetch("http://localhost:8000/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: "What is RAG?" }),
+          });
+          document.getElementById("out").textContent =
+            res.status + " " + (await res.text());
+        } catch (e) {
+          document.getElementById("out").textContent = "Error: " + e;
+        }
+      }
+    </script>
+  </body>
+</html>

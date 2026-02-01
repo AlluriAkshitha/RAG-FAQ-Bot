@@ -1,0 +1,13 @@
+RAG FAQ Bot Documentation
+
+Q1: What is RAG?
+Retrieval-Augmented Generation combines vector search with LLMs for accurate answers from your docs.
+
+Q2: How does it work?
+1. Chunk PDF → Embeddings → FAISS index
+2. Query → Retrieve chunks → LLM generates answer using context
+
+Q3: Local LLM?
+Uses Ollama llama3.1 - no API costs!
+
+This is your test FAQ.
